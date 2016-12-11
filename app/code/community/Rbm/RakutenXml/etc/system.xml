@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<config>
+    <tabs>
+        <rbm translate="label" module='adminhtml' >
+            <label>Reinaldo Mendes</label>
+            <sort_order>410</sort_order>
+        </rbm>
+    </tabs>
+    <sections>
+        <rbmRakuten translate="label" module="rbmRakutenXml">
+            <tab>rbm</tab>
+            <label>Rakuten</label>
+            <frontend_type>text</frontend_type>
+            <sort_order>99999999999</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store> 
+            <groups>
+                <enterprise_xml>
+                    <label>Enterprise Xml Integration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>9</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>    
+                    <expanded>1</expanded>
+                    <comment><![CDATA[
+                        SPI & Enterprise XML WebService : 3.0 <br/>
+                        Entry Gateway Page: <strong><dfn>YOUR-SITE-URL/rakuten/entry </dfn></strong>
+                        <br/>
+                        <br/>
+]]>
+                    </comment>
+                    <fields>
+                        
+                        <enabled>
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enabled>
+                        <ran_mid>
+                            <label>RanMID</label>
+                            <frontend_type>text</frontend_type>                            
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ran_mid>
+                        
+                        <global_code>
+                            <label>Global Code</label>
+                            <frontend_type>textarea</frontend_type>                            
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Send by rakuten, execute on whole site]]></comment>
+                        </global_code>
+                        
+                        <conversion_code>
+                            <label>Conversion Code</label>
+                            <frontend_type>textarea</frontend_type>                            
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Send by rakuten, execute on success pages]]></comment>
+                        </conversion_code>
+                        
+                        
+                        <success_pages_paths>
+                            <label>Success Pages</label>
+                            <frontend_type>textarea</frontend_type>                            
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[path of success pages one by line. ex: '/checkout/onepage/success']]></comment>
+                        </success_pages_paths>
+                        
+                        
+                    </fields>
+                </enterprise_xml>
+            </groups>
+        </rbmRakuten>
+        
+<!--        <rbmTemplate translate="label" module="rbmTemplate">
+            <tab>rbm</tab>
+            <label>Templates</label>
+            <frontend_type>text</frontend_type>
+            <sort_order>99999999999</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>            
+            <groups>
+                <fbq>
+                    <label>Facebook Pixel(Conversion Code)</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>9</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                        
+                    <fields>
+                        <tracking_enabled translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tracking_enabled>
+                        <tracking_account translate="label">
+                            <label>Account ID</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </tracking_account>                        
+                    </fields>
+                </fbq>
+            </groups>
+        </rbmTemplate>-->
+    </sections>    
+</config>
