@@ -12,11 +12,13 @@ class Rbm_RakutenXml_Model_SentLog extends Mage_Core_Model_Abstract
     const STATUS_GOOD = 1;
     const STATUS_BAD = -1;
     const STATUS_FAIL = -2;
+    const STATUS_HTTP_FAIL= -3;
 
     public function _construct()
     {
         parent::_construct();
         $this->_init('rbmRakutenXml/sentLog');
-    }
+    }           
+    
 
 }

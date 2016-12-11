@@ -49,6 +49,10 @@ class Rbm_RakutenXml_Helper_Data extends Mage_Core_Helper_Abstract{
   public function getGlobalScript(){      
       return Mage::getStoreConfig('rbmRakuten/enterprise_xml/global_code');
   }
+  
+  public function getHmacKey(){
+      return Mage::getStoreConfig('rbmRakuten/enterprise_xml/md5_hmac_key');
+  }
   /**
    * 
    * @return type
@@ -139,5 +143,15 @@ EOD;
     return in_array($uri,$values);
   }
 
+  
+  public function notifyRakuten(Mage_Sales_Model_Order $order,$cancel=false){
+      if($this->isEnabled()){
+          
+        $modelRest = Mage::getModel('rbmRakutenXml/rest',array('helper' => $this, 'order' => $order));        
+        #$modelRest->setOrder($order);        
+        #$modelRest->setHelper($this);        
+        $modelRest->notifyRakuten($cancel);        
+      }
+    }
   
 }

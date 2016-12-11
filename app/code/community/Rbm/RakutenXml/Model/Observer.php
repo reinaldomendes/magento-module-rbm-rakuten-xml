@@ -57,4 +57,32 @@ class Rbm_RakutenXml_Model_Observer{
     }
     
     
+    /**
+     * Notify commissioned Actions
+     * @param type $evt
+     */
+    public function onOrderPay($evt){
+        return false;
+        $invoice = $evt->getInvoice();
+        /*@var $invoice Mage_Sales_Model_Order_Invoice*/        
+        $order = $invoice->getOrder();
+        $helper = Mage::helper('rbmRakutenXml');
+        $isCancel = false;
+        $helper->notifyRakuten($order,$isCancel);                
+    }
+    /**
+     * Cancel commissioned Actions
+     * @param type $evt
+     */
+    public function onCancelOrder($evt){
+        return false;
+        $creditMemo = $evt->getCreditmemo();        
+        /*@var $creditMemo Mage_Sales_Model_Order_Creditmemo*/        
+        $order = $creditMemo->getOrder();        
+        $helper = Mage::helper('rbmRakutenXml');
+        $isCancel = true;
+        $helper->notifyRakuten($order,$isCancel);
+    }
+    
+    
 }

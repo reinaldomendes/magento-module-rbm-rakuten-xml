@@ -76,8 +76,24 @@
         
         <events>
             <sales_order_payment_pay>
-                
+                <observers>
+                 <rbm_rakutenxml_order_pay_send_commissioned_action>
+                        <type>singleton</type>
+                        <class>rbmRakutenXml/Observer</class>
+                        <method>onOrderPay</method>
+                </rbm_rakutenxml_order_pay_send_commissioned_action>
+                </observers>
             </sales_order_payment_pay>
+            <sales_order_payment_refund>
+                <observers>
+                    <rbm_rakutenxml_order_pay_send_commissioned_action_refund>
+                        <type>singleton</type>
+                        <class>rbmRakutenXml/Observer</class>
+                        <method>onCancelOrder</method>
+                    </rbm_rakutenxml_order_pay_send_commissioned_action_refund>
+                </observers>
+            </sales_order_payment_refund>
+            
         </events>
     </global>
 
@@ -157,6 +173,7 @@
         <rbmRakuten>
             <enterprise_xml>
                 <success_pages_paths><![CDATA[checkout/onepage/success]]></success_pages_paths>
+                <md5_hmac_key>xxxxxyyyy</md5_hmac_key>
             </enterprise_xml>
         </rbmRakuten>
     </default>
