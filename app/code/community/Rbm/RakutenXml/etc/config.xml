@@ -28,7 +28,7 @@
 <config>
     <modules>
         <Rbm_RakutenXml>
-            <version>0.0.0</version>
+            <version>1.0.0</version>
         </Rbm_RakutenXml>
     </modules>
 
